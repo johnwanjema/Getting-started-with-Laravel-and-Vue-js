@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any?}', [
+Route::get('/', [
     function () {
         return view('welcome');
     }
-])->where('any', '.*')  ;
+])->where('any', '.*');
+
+Auth::routes();
+
+Route::get('/home/{any?}', [
+    function () {
+        return view('home');
+    }
+])->where('any', '.*');
+
+
