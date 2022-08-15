@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getAuthUser: function getAuthUser() {
-      axios.get('/api/user').then(function (_ref) {
+      axios.get('/api/get-authenticated-user').then(function (_ref) {
         var data = _ref.data;
         console.log(data);
       })["catch"](function (error) {

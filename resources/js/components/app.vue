@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header">Example Component Laravel Vue</div>
                     <div class="card-body">
-                        I'm an example component.
+                       Auth User name : {{user.name}}
                     </div>
                 </div>
             </div>
@@ -17,13 +17,15 @@
 export default {
     data() {
         return {
-            message: 'Hello World'
+            message: 'Hello World',
+            user:{}
         }
     },
     methods:{
         getAuthUser(){
-            axios.get('/api/user').then(({ data }) => {
+            axios.get('/api/get-authenticated-user').then(({ data }) => {
               console.log(data)
+              this.user = data;
             }).catch((error) => {
                 console.log(error);
             });
