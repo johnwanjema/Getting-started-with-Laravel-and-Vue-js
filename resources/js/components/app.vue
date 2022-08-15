@@ -24,8 +24,8 @@ export default {
     methods:{
         getAuthUser(){
             axios.get('/api/get-authenticated-user').then(({ data }) => {
-              console.log(data)
-              this.user = data;
+            //   console.log(data)
+              this.user = data.data;
             }).catch((error) => {
                 console.log(error);
             });

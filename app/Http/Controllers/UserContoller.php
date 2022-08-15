@@ -92,7 +92,9 @@ class UserContoller extends Controller
      */
     public function authUser(User $user)
     {
-        return Auth::User();
+        $user =  Auth::User();
+
+        return api_response(true,null, 200, 'success','successfully fetched auth user details.', $user);
     }
 
 }
